@@ -89,7 +89,7 @@ void main()
 		}
 
 		responseBuffer[response] = '\0';
-		cout << endl << "Server response:\n" << responseBuffer << endl;
+		cout << endl << "\nServer response:\n" << responseBuffer << endl;
 	}
 
 	// NOTE: Close socket

@@ -62,7 +62,7 @@ void main()
 		char dataBuffer[1024];
 		while (recv(personalSocket, dataBuffer, sizeof(dataBuffer), 0) != 0) {
 
-			printf("Received packet from %s:%d\n", inet_ntoa(remoteAd.sin_addr), ntohs(remoteAd.sin_port));
+			printf("\nReceived packet from %s:%d\n", inet_ntoa(remoteAd.sin_addr), ntohs(remoteAd.sin_port));
 			printf("Data: %s\n", dataBuffer);
 
 			char response[1024];
@@ -96,6 +96,7 @@ void main()
 			}
 
 			send(personalSocket, response, strlen(response), 0);
+			printf("Response sent to %s:%d: %s\n", inet_ntoa(remoteAd.sin_addr), ntohs(remoteAd.sin_port), response);
 		}
 
 		closesocket(personalSocket);
